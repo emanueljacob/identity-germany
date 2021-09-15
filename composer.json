@@ -1,6 +1,6 @@
 {
     "name": "slashplus/identity-germany",
-    "description": "Verify the age of a person using a german id card or passport",
+    "description": "Verify the age of a person using the german id card.",
     "version": "1.0.0",
     "type": "library",
     "license": "MIT",
