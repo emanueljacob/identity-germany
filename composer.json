@@ -1,0 +1,42 @@
+{
+    "name": "slashplus/identity-germany",
+    "description": "Verify the age of a person using a german id card or passport",
+    "version": "1.0.0",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Emanuel Jacob",
+            "email": "info@slashplus.de",
+            "homepage": "https://www.slashplus.de"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "~7.4|~8.0",
+        "illuminate/filesystem": "^8.0",
+        "illuminate/translation": "^8.0",
+        "illuminate/validation": "^8.0"
+    },
+    "keywords": [
+        "age verification",
+        "age check",
+        "Personalausweis",
+        "Reisepass",
+        "id card check",
+        "passport check"
+    ],
+    "autoload": {
+        "psr-4": {
+            "Slashplus\\IdentityGermany\\": "src",
+            "Slashplus\\IdentityGermany\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "prefer-stable": true,
+    "require-dev": {
+        "pestphp/pest": "^1.18"
+    }
+}

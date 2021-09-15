@@ -1,0 +1,13 @@
+*~
+.*.marks
+\#*\#
+.~lock.*#
+/*.iml
+/*/*.iml
+/.idea
+/_*/*
+/env/*
+.DS_STORE
+*_dump.sql
+vendor/
+composer.lock
