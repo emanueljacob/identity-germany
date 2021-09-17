@@ -7,7 +7,7 @@ use Slashplus\IdentityGermany\Exceptions\ClassNotFoundException;
 
 class AgeVerification
 {
-    public function create(array $data, string $validator = 'id_card')
+    public static function create(array $data, string $validator = 'id_card')
     {
         $className = \Illuminate\Support\Str::studly($validator);
         $class = '\\'.__NAMESPACE__.'\\Validation\\'.$className.'Validation\\Validator';
