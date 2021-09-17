@@ -8,25 +8,51 @@ use Slashplus\IdentityGermany\Validation\IdCardValidation\Rules\BlackList;
 use Slashplus\IdentityGermany\Validation\IdCardValidation\Rules\Checksum;
 use Slashplus\IdentityGermany\Validation\ValidatorFactory;
 
+/**
+ * Class Validator
+ *
+ * @package Slashplus\IdentityGermany\Validation\IdCardValidation
+ */
 class Validator implements ValidatorContract
 {
-    protected \Illuminate\Validation\Validator $validator;
+    /**
+     * @var \Illuminate\Validation\Validator
+     */
+    protected $validator;
 
-    protected array $data;
+    /**
+     * @var array
+     */
+    protected $data;
 
-    protected string $idCardString;
+    /**
+     * @var string
+     */
+    protected $idCardString;
 
+    /**
+     * Validator constructor.
+     *
+     * @param array $data
+     */
     public function __construct(array $data)
     {
         [$this->data, $this->idCardString] = $this->parseData($data);
         $factory = new ValidatorFactory();
 
+        /** @var \Illuminate\Validation\Validator validator */
         $this->validator = $factory->make($this->data, $this->rules());
     }
 
+    /**
+     * @param $data
+     * @return array
+     */
     private function parseData($data)
     {
-        $subStrData = fn(array $data, string $key) => isset($data[$key]) && is_string($data[$key]) ? $data[$key] : '';
+        $subStrData = function (array $data, string $key) {
+            return isset($data[$key]) && is_string($data[$key]) ? $data[$key] : '';
+        };
         foreach (['birth', 'expire'] as $date) {
             $data[$date] = $this->explodeChunks($subStrData($data, $date), [
                     'year' => 2,
@@ -48,6 +74,10 @@ class Validator implements ValidatorContract
     }
 
 
+    /**
+     * @param array $data
+     * @return string
+     */
     protected function parseIdCardString(array $data)
     {
         $idCard = '';
@@ -73,6 +103,11 @@ class Validator implements ValidatorContract
         return $idCard;
     }
 
+    /**
+     * @param string $string
+     * @param array $lengths
+     * @return array
+     */
     protected function explodeChunks(string $string, array $lengths)
     {
         $index = 0;
@@ -85,16 +120,14 @@ class Validator implements ValidatorContract
         return $arr;
     }
 
-    const YYMMDD = '/^\d{2}(0[1-9]|1[012])(0[1-9]|[12][0-9]|3[01])$/';
-
-
+    /**
+     * @return array
+     */
     protected function rules()
     {
-        $uppercaseRule = fn(
-            $attribute,
-            $value,
-            $fail
-        ) => strtoupper($value) === $value ?: $fail(':attribute must be uppercase.');
+        $uppercaseRule = function ($attribute, $value, $fail) {
+            return strtoupper($value) === $value ?: $fail(':attribute must be uppercase.');
+        };
         $regexAllowedChars = '/^[[0-9CFGHJKLMNPRTVWXYZ]+$/i';
         $regexAllowedYear = '/^[0-9]{2}$/i';
         $regexAllowedMonth = '/^(0[1-9]|1[012])$/i';
@@ -130,61 +163,126 @@ class Validator implements ValidatorContract
         ];
     }
 
+    /**
+     * @return array
+     * @throws \Illuminate\Validation\ValidationException
+     */
     public function validate()
     {
         return $this->validator->validate();
     }
 
+    /**
+     * @return bool
+     */
     public function fails()
     {
         return $this->validator->fails();
     }
 
+    /**
+     * @return array
+     */
     public function failed()
     {
         return $this->validator->failed();
     }
 
+    /**
+     * @return \Illuminate\Support\MessageBag
+     */
     public function errors()
     {
         return $this->validator->errors();
     }
 
+    /**
+     * @return mixed
+     */
     public function passes()
     {
         return $this->validator->passes();
     }
 
+    /**
+     * @return array
+     * @throws \Illuminate\Validation\ValidationException
+     */
     public function validated()
     {
         return $this->validator->validated();
     }
 
+    /**
+     * @return \Illuminate\Contracts\Support\MessageBag
+     */
     public function getMessageBag()
     {
         return $this->validator->getMessageBag();
     }
 
+    /**
+     * @param array|string $attribute
+     * @param array|string $rules
+     * @param callable $callback
+     * @return Validator
+     */
     public function sometimes($attribute, $rules, callable $callback)
     {
         return $this->validator->sometimes($attribute, $rules, $callback);
     }
 
+    /**
+     * @param callable|string $callback
+     * @return Validator
+     */
     public function after($callback)
     {
         return $this->validator->after($callback);
     }
 
+    /**
+     * @return \DateTime|false
+     */
     public function validatedBirthDate()
     {
         return $this->validatedDate('birth');
     }
 
+    /**
+     * @return \DateTime|false
+     */
     public function validatedExpireDate()
     {
         return $this->validatedDate('expire');
     }
 
+    /**
+     * @param string $type
+     * @return string
+     * @throws \Illuminate\Validation\ValidationException
+     */
+    protected function validatedDateString(string $type): string
+    {
+        $valid = $this->validated();
+        if(
+            array_key_exists($type, $valid)
+            && is_array($valid[$type])
+            && count(array_intersect_key($valid[$type], array_flip(['year', 'month', 'day']))) === 3
+        ) {
+            $arr = $valid[$type];
+            return "{$arr['year']}{$arr['month']}{$arr['day']}";
+        }
+
+        return '';
+    }
+
+    /**
+     * @param string $type
+     * @param string|null $timezone
+     * @return \DateTime|false
+     * @throws \Illuminate\Validation\ValidationException
+     */
     protected function validatedDate(string $type, ?string $timezone = 'GMT')
     {
         $valid = $this->validated();

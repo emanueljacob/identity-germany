@@ -6,7 +6,7 @@ use Illuminate\Contracts\Validation\Rule;
 
 class BlackList implements Rule
 {
-    protected array $blacklist = [
+    protected $blacklist = [
         '122000129764081251710319D8',
         'L01X00T47183081263108011D7',
         'T22000129364081252010315D4',

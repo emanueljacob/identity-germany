@@ -8,9 +8,9 @@ use Illuminate\Support\Arr;
 class Checksum implements Rule
 {
 
-    private array $dependentFields;
-    private array $data;
-    private array $valueMap = [
+    private $dependentFields;
+    private $data;
+    private $valueMap = [
         0 => 0,
         1 => 1,
         2 => 2,
