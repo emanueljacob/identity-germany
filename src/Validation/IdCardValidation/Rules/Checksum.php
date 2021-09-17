@@ -40,7 +40,7 @@ class Checksum implements Rule
         'Z' => 35,
     ];
 
-    private array $multiplierMap = [7, 3, 1];
+    private $multiplierMap = [7, 3, 1];
 
     public function __construct($data, array $dependentFields)
     {
