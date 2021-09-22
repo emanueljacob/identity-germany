@@ -1,5 +1,5 @@
 # slashplus identity-germany
-Verify the age of a person using the german id card. 
+Verify the age of a person using the german id card and german passport. 
 
 The verification uses laravels validation package (`illuminate/validation`).
 
@@ -9,10 +9,10 @@ Install the package via composer
 
 ## Usage
 To make use of the validation just create a new instance, passing the validation data 
-and method. Depending on the validation method (i.e. `id_card`) the correct validator 
+and method. Depending on the validation method (i.e. `id_card`, `passport`) the correct validator 
 instance will be created.
 
-i.e.
+i.e. an `id_card` type validation 
 ```php
 // note: this example contains invalid data, but you get an idea
 $validator = \Slashplus\IdentityGermany\AgeVerification::create([
@@ -45,9 +45,10 @@ The input data might depend on the validation method. For information about it,
 check the methods directory and its readme:
 
 - `id_card`: [src/Validation/IdCardValidation/README.md](/src/Validation/IdCardValidation/README.md)
+- `passport`: [src/Validation/PassportValidation/README.md](/src/Validation/PassportValidation/README.md)
 
 ## Roadmap
-Currently there is only one method for checking against the german id card.
-In a further release the plan is to extended the functionality by adding 
-- a passport method 
+Currently, there are only two validation types for checking against the german id card and the german passport.
+In a further release the plan is to extend the functionality by adding 
 - a german residence authorization method
+- ...
