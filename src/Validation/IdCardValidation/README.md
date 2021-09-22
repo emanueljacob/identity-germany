@@ -2,8 +2,8 @@
 This package descripes the validation process of the german identity card
 (neuer deutscher Personalausweis/alter deutscher Personalausweis).
 
-![old idcard example](../../art/idcard-old_mustermann_marked.jpeg)
-![new idcard example](../../art/idcard-new_mustermann_marked.jpeg)
+![old idcard example](../../../art/idcard-old_mustermann_marked.jpeg)
+![new idcard example](../../../art/idcard-new_mustermann_marked.jpeg)
 The id card is build from 4 different strings
 
 ## ID cart string structure
@@ -20,13 +20,13 @@ The following structure explains the parts that the id card string will be divid
     Example: `00129`
   - Checksum: 1 digit<br>
     Example: `3`
-- birth (birth date) + checksum: 6 digits + 1 digit<br>
+- Birth (birth date) + checksum: 6 digits + 1 digit<br>
   Example: `6408125` with<br>
     - `64` is the year of birth
     - `08` is the month of birth 
     - `12` is the day of birth 
     - `5` is the checksum
-- Expiry date + checksum: 6 digits + 1 digit<br>
+- Expiry (expire date) + checksum: 6 digits + 1 digit<br>
   Example: `2010315` with<br>
     - `20` is the year of expiry
     - `10` is the month of expiry

@@ -81,6 +81,7 @@ class Validator implements ValidatorContract
     protected function parseIdCardString(array $data)
     {
         $idCard = '';
+        // the ordering of the following array is relevant!!
         $keys = [
             'serial.authority',
             'serial.consecutive',
@@ -243,6 +244,7 @@ class Validator implements ValidatorContract
 
     /**
      * @return \DateTime|false
+     * @throws \Illuminate\Validation\ValidationException
      */
     public function validatedBirthDate()
     {
@@ -251,6 +253,7 @@ class Validator implements ValidatorContract
 
     /**
      * @return \DateTime|false
+     * @throws \Illuminate\Validation\ValidationException
      */
     public function validatedExpireDate()
     {
