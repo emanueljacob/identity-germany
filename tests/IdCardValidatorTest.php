@@ -1,4 +1,5 @@
 <?php
+
 namespace Slashplus\IdentityGermany\Tests;
 
 use Slashplus\IdentityGermany\Validation\IdCardValidation\Validator as Validator;
