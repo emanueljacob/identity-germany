@@ -243,21 +243,23 @@ class Validator implements ValidatorContract
     }
 
     /**
+     * @param string|null $timezone
      * @return \DateTime|false
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function validatedBirthDate()
+    public function validatedBirthDate(?string $timezone = 'GMT+2')
     {
-        return $this->validatedDate('birth');
+        return $this->validatedDate('birth', $timezone);
     }
 
     /**
+     * @param string|null $timezone
      * @return \DateTime|false
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function validatedExpireDate()
+    public function validatedExpireDate(?string $timezone = 'GMT+2')
     {
-        return $this->validatedDate('expire');
+        return $this->validatedDate('expire', $timezone);
     }
 
     /**
