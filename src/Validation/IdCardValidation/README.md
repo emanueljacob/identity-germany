@@ -1,12 +1,13 @@
 # German Identity Card validation (Neuer Personalausweis/Alter Personalausweis)
-This package descripes the validation process of the german identity card
+This package describes the validation process of the german identity card
 (neuer deutscher Personalausweis/alter deutscher Personalausweis).
 
 ![old idcard example](../../../art/idcard-old_mustermann_marked.jpeg)
 ![new idcard example](../../../art/idcard-new_mustermann_marked.jpeg)
-The id card is build from 4 different strings
 
-## ID cart string structure
+The document is build from different strings:
+
+## String structure
 The complete calculation procedure of the id validation can be described like this.
 
 

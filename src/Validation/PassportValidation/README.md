@@ -1,11 +1,15 @@
 # German Passport validation (Reisepass)
-This package descripes the validation process of the german passport
+This package describes the validation process of the german passport
 (Reisepass).
 
-![passport example](../../../art/passport_mustermann_marked.jpg)
-The id card is build from 4 different strings
+More information can be found at
+[BMI](https://www.bmi.bund.de/SharedDocs/downloads/DE/veroeffentlichungen/themen/moderne-verwaltung/ausweise/reisepass-flyer.pdf?__blob=publicationFile&v=3)
 
-## ID cart string structure
+![passport example](../../../art/passport_mustermann_marked.jpg)
+
+The document is build from different strings:
+
+## String structure
 The complete calculation procedure of the id validation can be described like this.
 
 
@@ -19,6 +23,8 @@ The following structure explains the parts that the id card string will be divid
     Example: `0006H`
   - Checksum: 1 digit<br>
     Example: `1`
+- Nationality: 1 uppercase character, usually `D` for "**D**eutschland" (= "Germany")<br>
+  Example: `D`
 - Birth (birth date) + checksum: 6 digits + 1 digit<br>
   Example: `6408125` with<br>
     - `64` is the year of birth
@@ -33,8 +39,6 @@ The following structure explains the parts that the id card string will be divid
     - `10` is the month of expiry
     - `31` is the day of expiry
     - `9` is the checksum
-- Nationality: 1 uppercase character, usually `D` for "**D**eutschland" (= "Germany")<br>
-  Example: `D`
 - Total checksum: 1 digit<br>
   The checksum, with reference to all parts as explained above
   Example: `0`

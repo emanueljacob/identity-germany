@@ -9,8 +9,8 @@ Install the package via composer
 
 ## Usage
 To make use of the validation just create a new instance, passing the validation data 
-and method. Depending on the validation method (i.e. `id_card`, `passport`) the correct validator 
-instance will be created.
+and method. Depending on the validation method (i.e. `id_card`, `passport`, `residence`) 
+the correct validator instance will be created.
 
 i.e. an `id_card` type validation 
 ```php
@@ -46,9 +46,9 @@ check the methods directory and its readme:
 
 - `id_card`: [src/Validation/IdCardValidation/README.md](/src/Validation/IdCardValidation/README.md)
 - `passport`: [src/Validation/PassportValidation/README.md](/src/Validation/PassportValidation/README.md)
+- `residence`: [src/Validation/ResidenceValidation/README.md](/src/Validation/ResidenceValidation/README.md)
 
 ## Roadmap
 Currently, there are only two validation types for checking against the german id card and the german passport.
 In a further release the plan is to extend the functionality by adding 
-- a german residence authorization method
 - ...
