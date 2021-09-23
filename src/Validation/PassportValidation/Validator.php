@@ -12,7 +12,7 @@ use Slashplus\IdentityGermany\Validation\ValidatorFactory;
 /**
  * Class Validator
  *
- * @package Slashplus\IdentityGermany\Validation\IdCardValidation
+ * @package Slashplus\IdentityGermany\Validation\PassportValidation
  */
 class Validator implements ValidatorContract
 {
