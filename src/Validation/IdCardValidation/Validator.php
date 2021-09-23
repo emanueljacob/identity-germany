@@ -28,7 +28,7 @@ class Validator implements ValidatorContract
     /**
      * @var string
      */
-    protected $idCardString;
+    protected $cardString;
 
     /**
      * Validator constructor.
@@ -37,7 +37,7 @@ class Validator implements ValidatorContract
      */
     public function __construct(array $data)
     {
-        [$this->data, $this->idCardString] = $this->parseData($data);
+        [$this->data, $this->cardString] = $this->parseData($data);
         $factory = new ValidatorFactory();
 
         /** @var \Illuminate\Validation\Validator validator */
@@ -68,7 +68,7 @@ class Validator implements ValidatorContract
             'checksum' => null, // the rest (should be 1, but will be validated)
         ]);
 
-        $data['full_idcard'] = $this->parseIdCardString($data);
+        $data['full_idcard'] = $this->parseCardString($data);
 
         return [$data, $data['full_idcard']];
     }
@@ -78,7 +78,7 @@ class Validator implements ValidatorContract
      * @param array $data
      * @return string
      */
-    protected function parseIdCardString(array $data)
+    protected function parseCardString(array $data)
     {
         $idCard = '';
         // the ordering of the following array is relevant!!
