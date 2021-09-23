@@ -289,7 +289,7 @@ class Validator implements ValidatorContract
      * @return \DateTime|false
      * @throws \Illuminate\Validation\ValidationException
      */
-    protected function validatedDate(string $type, ?string $timezone = 'GMT')
+    protected function validatedDate(string $type, ?string $timezone = 'GMT+2')
     {
         $valid = $this->validated();
         if(
