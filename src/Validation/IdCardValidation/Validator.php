@@ -157,7 +157,7 @@ class Validator implements ValidatorContract
                 'required', 'string', 'regex:/^[0-9]$/i', "size:1",
                 new Checksum($this->data, ['expire.year', 'expire.month', 'expire.day']),
             ],
-            'nationality' => ['required', 'string', 'alpha_num', $uppercaseRule],
+            'nationality' => ['required', 'string', 'alpha', "size:1", $uppercaseRule],
             'checksum' => ['required', 'string', 'regex:/^[0-9]$/i', "size:1"],
             'full_idcard' => ['required', 'string', "size:26", new BlackList]
             // will be created automatically from single fields

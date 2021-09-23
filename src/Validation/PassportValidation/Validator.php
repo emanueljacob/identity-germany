@@ -151,6 +151,7 @@ class Validator implements ValidatorContract
                 'required_with_all:birth.year', 'string', 'regex:/^[0-9\s]+$/i', "size:1",
                 new Checksum($this->data, ['birth.year', 'birth.month', 'birth.day']),
             ],
+            'gender' => ['required', 'string', 'alpha', Rule::in(['F', 'M']),$uppercaseRule],
             'expire' => ['required', 'array'],
             'expire.year' => ['required', 'string', "regex:{$regexAllowedYear}", "size:2"],
             'expire.month' => ['required', 'string', "regex:{$regexAllowedMonth}", "size:2"],
@@ -159,8 +160,7 @@ class Validator implements ValidatorContract
                 'required', 'string', 'regex:/^[0-9]$/i', "size:1",
                 new Checksum($this->data, ['expire.year', 'expire.month', 'expire.day']),
             ],
-            'nationality' => ['required', 'string', 'alpha_num', $uppercaseRule],
-            'gender' => ['required', 'string', 'alpha_num', Rule::in(['F', 'M']),$uppercaseRule],
+            'nationality' => ['required', 'string', 'alpha', "size:1", $uppercaseRule],
             'checksum' => ['required', 'string', 'regex:/^[0-9]$/i', "size:1"],
             'full_idcard' => ['required', 'string', "size:27", new BlackList]
             // will be created automatically from single fields
