@@ -151,7 +151,7 @@ class Validator implements ValidatorContract
                 'required_with_all:birth.year', 'string', 'regex:/^[0-9\s]+$/i', "size:1",
                 new Checksum($this->data, ['birth.year', 'birth.month', 'birth.day']),
             ],
-            'gender' => ['required', 'string', 'alpha', Rule::in(['F', 'M']),$uppercaseRule],
+            'gender' => ['required', 'string', 'alpha', Rule::in(['F', 'M', 'X']),$uppercaseRule],
             'expire' => ['required', 'array'],
             'expire.year' => ['required', 'string', "regex:{$regexAllowedYear}", "size:2"],
             'expire.month' => ['required', 'string', "regex:{$regexAllowedMonth}", "size:2"],
