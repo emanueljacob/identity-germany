@@ -141,6 +141,16 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        'id_card' => [
+            'blacklist' => ':attribute is part of a blacklist (i.e. combination of an example document)',
+        ],
+        'passport' => [
+            'blacklist' => ':attribute is part of a blacklist (i.e. combination of an example document)',
+        ],
+        'residence' => [
+            'blacklist' => ':attribute is part of a blacklist (i.e. combination of an example document)',
+        ],
+        'checksum' => ':attribute is invalid',
     ],
 
     /*

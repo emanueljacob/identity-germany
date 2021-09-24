@@ -3,6 +3,7 @@
 namespace Slashplus\IdentityGermany\Validation\PassportValidation\Rules;
 
 use Illuminate\Contracts\Validation\Rule;
+use Slashplus\IdentityGermany\Validation\ValidatorFactory;
 
 class BlackList implements Rule
 {
@@ -38,6 +39,7 @@ class BlackList implements Rule
      */
     public function message()
     {
-        return ':attribute is one of a blacklisted id cards (i.e. a demo card)';
+        $key = 'validation.custom.passport.blacklist';
+        return ValidatorFactory::$translator->get($key);
     }
 }

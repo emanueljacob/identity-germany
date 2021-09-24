@@ -118,7 +118,19 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        'id_card' => [
+            'blacklist' => ':attribute ist Teil einer geblockten Liste (z.B. die Kombination eines Beispieldokuments)',
+        ],
+        'passport' => [
+            'blacklist' => ':attribute ist Teil einer geblockten Liste (z.B. die Kombination eines Beispieldokuments)',
+        ],
+        'residence' => [
+            'blacklist' => ':attribute ist Teil einer geblockten Liste (z.B. die Kombination eines Beispieldokuments)',
+        ],
+        'checksum' => ':attribute ist ungültig',
     ],
+    'checksum' => ':attribute ist ungültig',
+
     'attributes'           => [
         'address'               => 'Adresse',
         'age'                   => 'Alter',

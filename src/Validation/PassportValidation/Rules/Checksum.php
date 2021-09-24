@@ -4,6 +4,7 @@ namespace Slashplus\IdentityGermany\Validation\PassportValidation\Rules;
 
 use Illuminate\Contracts\Validation\Rule;
 use Illuminate\Support\Arr;
+use Slashplus\IdentityGermany\Validation\ValidatorFactory;
 
 class Checksum implements Rule
 {
@@ -99,6 +100,7 @@ class Checksum implements Rule
      */
     public function message()
     {
-        return ':attribute is invalid';
+        $key = 'validation.custom.checksum';
+        return ValidatorFactory::$translator->get($key);
     }
 }
