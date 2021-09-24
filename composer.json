@@ -1,6 +1,6 @@
 {
     "name": "slashplus/identity-germany",
-    "description": "Verify the age of a person using the german id card.",
+    "description": "Verify the age of a person using the german id card, german passport or german residence permission (eAT).",
     "version": "1.0.0",
     "type": "library",
     "license": "MIT",
@@ -22,9 +22,12 @@
         "age verification",
         "age check",
         "Personalausweis",
-        "Reisepass",
         "id card check",
-        "passport check"
+        "passport check",
+        "Reisepass",
+        "residence permission check",
+        "eAufenthaltstitel",
+        "EAT"
     ],
     "autoload": {
         "psr-4": {

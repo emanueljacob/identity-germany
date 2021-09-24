@@ -1,16 +1,20 @@
 # slashplus identity-germany
-Verify the age of a person using the german id card and german passport. 
+Verify the age of a person using the german id card, german passport or 
+german residence permission (eAT). 
 
-The verification uses laravels validation package (`illuminate/validation`).
+The verification uses laravels validation package (`illuminate/validation`; verson ~6). However it does not require a 
+laravel application, so it can be used standalone as library in combination with any package as long as the package 
+requirements do not clash.
 
 ## Installation
 Install the package via composer
 `composer require slashplus/identity-germany`
 
 ## Usage
-To make use of the validation just create a new instance, passing the validation data 
-and method. Depending on the validation method (i.e. `id_card`, `passport`, `residence`) 
-the correct validator instance will be created.
+To make use of the validation just create a new instance via the \Slashplus\IdentityGermany\AgeVerification class that 
+acts as concrete factory class, by passing the validation data and method. 
+Depending on the validation method (i.e. `id_card`, `passport`, `residence`) 
+the correct validator instance will be created and can be used.
 
 i.e. an `id_card` type validation 
 ```php
@@ -29,7 +33,7 @@ $validator = \Slashplus\IdentityGermany\AgeVerification::create([
 You are then able to use all validation methods from the `Slashplus\IdentityGermany\Contracts\Validation` 
 contract, which extends the `\Illuminate\Contracts\Validation\Validator` contract.
 
-This means you're able to get information from the validator if needed:
+This means you're able to get the following information from the validator if needed:
 
 ```php
 // regular illuminate methods i.e.
@@ -41,14 +45,20 @@ $validatedExpire = $validator->validatedExpireDate(); // DateTime object (throws
 ```
 
 ### Data structure
-The input data might depend on the validation method. For information about it, 
-check the methods directory and its readme:
+The input data might depend on the validation type. For more information about it, 
+check the types directories and their readme files:
 
 - `id_card`: [src/Validation/IdCardValidation/README.md](/src/Validation/IdCardValidation/README.md)
 - `passport`: [src/Validation/PassportValidation/README.md](/src/Validation/PassportValidation/README.md)
 - `residence`: [src/Validation/ResidenceValidation/README.md](/src/Validation/ResidenceValidation/README.md)
 
 ## Roadmap
-Currently, there are only two validation types for checking against the german id card and the german passport.
-In a further release the plan is to extend the functionality by adding 
-- ...
+Currently, there are only three validation types for checking data against the german id card, the german passport and 
+the german residence permission (eAT).
+In a further release this might be extended. Feel free to contribute or tell us your wishes. :rocket:
+
+Right now, this package uses components from laravel in version ~6. This is due to the fact that this package should 
+be compatible with PHP 7.3 and at the time of creation it must also be compatible to symfony components in versions 
+that more recent versions of laravel do not allow to install.
+As soon as this is no longer an issue, the required package versions will be updated. Those who might want to fork the 
+package should know, that it should be compatible with laravel 6-8 but compatibility can not be guaranteed. 
