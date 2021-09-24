@@ -36,10 +36,10 @@ class Validator implements ValidatorContract
      *
      * @param array $data
      */
-    public function __construct(array $data)
+    public function __construct(array $data, $lang = 'en')
     {
         [$this->data, $this->cardString] = $this->parseData($data);
-        $factory = new ValidatorFactory();
+        $factory = new ValidatorFactory('lang', $lang);
 
         /** @var \Illuminate\Validation\Validator validator */
         $this->validator = $factory->make($this->data, $this->rules());
@@ -69,9 +69,9 @@ class Validator implements ValidatorContract
             'checksum' => null, // the rest (should be 1, but will be validated)
         ]);
 
-        $data['full_idcard'] = $this->parseCardString($data);
+        $data['full_card'] = $this->parseCardString($data);
 
-        return [$data, $data['full_idcard']];
+        return [$data, $data['full_card']];
     }
 
 
@@ -162,7 +162,7 @@ class Validator implements ValidatorContract
             ],
             'nationality' => ['required', 'string', 'alpha', "size:1", $uppercaseRule],
             'checksum' => ['required', 'string', 'regex:/^[0-9]$/i', "size:1"],
-            'full_idcard' => ['required', 'string', "size:27", new BlackList]
+            'full_card' => ['required', 'string', "size:27", new BlackList]
             // will be created automatically from single fields
         ];
     }
