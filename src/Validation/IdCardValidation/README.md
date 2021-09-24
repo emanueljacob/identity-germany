@@ -10,7 +10,6 @@ The document is build from different strings:
 ## String structure
 The complete calculation procedure of the id validation can be described like this.
 
-
 The following structure explains the parts that the id card string will be divided into.
 
 - Serialnumber (based on authority code + consecutive number + checksum): 4 mixed characters + 4 mixed characters + 1 digit<br>
@@ -44,8 +43,7 @@ The following structure explains the parts that the id card string will be divid
 
 ### Insights
 - [Behördenkennzahl; BKZ (external website)](http://www.pruefziffernberechnung.de/Begleitdokumente/BKZ.shtml)
-- [Behördenkennzahl; BKZ (external website)](http://www.pruefziffernberechnung.de/Begleitdokumente/BKZ.shtml)
 
-### Generating random Personalausweis numbers (testing)
+### Generating random id card (Personalausweis) numbers (testing)
 - [perso.xyz (external website)](https://www.perso.xyz/)
-- [Calculation of the german idcard checksums (external website)](http://www.pruefziffernberechnung.de/P/Personalausweis-DE.shtml)
+- [Calculation of the german id card checksums (external website)](http://www.pruefziffernberechnung.de/P/Personalausweis-DE.shtml)
