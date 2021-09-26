@@ -1,6 +1,6 @@
 <?php
 
-namespace Slashplus\IdentityGermany\Validation;
+namespace Slashplus\Identity\Validation;
 
 use Illuminate\Validation;
 use Illuminate\Translation;
@@ -12,7 +12,7 @@ use Illuminate\Translation\Translator;
 /**
  * Class ValidatorFactory
  *
- * @package Slashplus\IdentityGermany\Validation
+ * @package Slashplus\Identity\Validation
  *
  * @method make(array $data, array $rules, array $messages = [], array $customAttributes = [])
  *

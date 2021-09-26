@@ -1,17 +1,17 @@
-# slashplus identity-germany
+# slashplus identity
 Verify the age of a person using the german id card, german passport or 
 german residence permission (eAT). 
 
-The verification uses laravels validation package (`illuminate/validation`; verson ~6). However it does not require a 
+The verification uses laravels validation package (`illuminate/validation`; version ~6). However it does not require a 
 laravel application, so it can be used standalone as library in combination with any package as long as the package 
 requirements do not clash.
 
 ## Installation
 Install the package via composer
-`composer require slashplus/identity-germany`
+`composer require slashplus/identity`
 
 ## Usage
-To make use of the validation just create a new instance via the \Slashplus\IdentityGermany\AgeVerification class that 
+To make use of the validation just create a new instance via the \Slashplus\Identity\AgeVerification class that 
 acts as concrete factory class, by passing the validation data and method. 
 Depending on the validation method (i.e. `id_card`, `passport`, `residence`) 
 the correct validator instance will be created and can be used.
@@ -19,7 +19,7 @@ the correct validator instance will be created and can be used.
 i.e. an `id_card` type validation 
 ```php
 // note: this example contains invalid data, but you get an idea
-$validator = \Slashplus\IdentityGermany\AgeVerification::create([
+$validator = \Slashplus\Identity\AgeVerification::create([
     [
     'serial' => '5484197598', 
     'birth' => '9512210', 
@@ -30,7 +30,7 @@ $validator = \Slashplus\IdentityGermany\AgeVerification::create([
 ]);
 ```
 
-You are then able to use all validation methods from the `Slashplus\IdentityGermany\Contracts\Validation` 
+You are then able to use all validation methods from the `Slashplus\Identity\Contracts\Validation` 
 contract, which extends the `\Illuminate\Contracts\Validation\Validator` contract.
 
 This means you're able to get the following information from the validator if needed:

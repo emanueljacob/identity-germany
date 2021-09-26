@@ -1,10 +1,10 @@
 <?php
 
-namespace Slashplus\IdentityGermany\Tests;
+namespace Slashplus\Identity\Tests;
 
-use Slashplus\IdentityGermany\Validation\ValidatorFactory;
-use Slashplus\IdentityGermany\Tests\Rules\isEqualToOneRule;
-use Slashplus\IdentityGermany\Tests\Rules\RuleReturnsKeyOnFailedTranslationRule;
+use Slashplus\Identity\Validation\ValidatorFactory;
+use Slashplus\Identity\Tests\Rules\isEqualToOneRule;
+use Slashplus\Identity\Tests\Rules\RuleReturnsKeyOnFailedTranslationRule;
 
 /** @test */
 it('check_data_format_validation', function () {

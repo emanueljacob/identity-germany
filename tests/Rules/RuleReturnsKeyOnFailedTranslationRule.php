@@ -1,7 +1,7 @@
 <?php
-namespace Slashplus\IdentityGermany\Tests\Rules;
+namespace Slashplus\Identity\Tests\Rules;
 
-use Slashplus\IdentityGermany\Validation\ValidatorFactory;
+use Slashplus\Identity\Validation\ValidatorFactory;
 use Illuminate\Contracts\Validation\Rule;
 
 

@@ -1,18 +1,18 @@
 <?php
 
-namespace Slashplus\IdentityGermany\Validation\ResidenceValidation;
+namespace Slashplus\Identity\Validation\ResidenceValidation;
 
 use Illuminate\Validation\Rule;
-use Slashplus\IdentityGermany\Contracts\Validation\Validator as ValidatorContract;
+use Slashplus\Identity\Contracts\Validation\Validator as ValidatorContract;
 use Illuminate\Support\Arr;
-use Slashplus\IdentityGermany\Validation\ResidenceValidation\Rules\BlackList;
-use Slashplus\IdentityGermany\Validation\ResidenceValidation\Rules\Checksum;
-use Slashplus\IdentityGermany\Validation\ValidatorFactory;
+use Slashplus\Identity\Validation\ResidenceValidation\Rules\BlackList;
+use Slashplus\Identity\Validation\ResidenceValidation\Rules\Checksum;
+use Slashplus\Identity\Validation\ValidatorFactory;
 
 /**
  * Class Validator
  *
- * @package Slashplus\IdentityGermany\Validation\ResidenceValidation
+ * @package Slashplus\Identity\Validation\ResidenceValidation
  */
 class Validator implements ValidatorContract
 {
