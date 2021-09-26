@@ -1,18 +1,18 @@
 <?php
 
-namespace Slashplus\IdentityGermany\Validation\PassportValidation;
+namespace Slashplus\Identity\Validation\PassportValidation;
 
 use Illuminate\Validation\Rule;
-use Slashplus\IdentityGermany\Contracts\Validation\Validator as ValidatorContract;
+use Slashplus\Identity\Contracts\Validation\Validator as ValidatorContract;
 use Illuminate\Support\Arr;
-use Slashplus\IdentityGermany\Validation\PassportValidation\Rules\BlackList;
-use Slashplus\IdentityGermany\Validation\PassportValidation\Rules\Checksum;
-use Slashplus\IdentityGermany\Validation\ValidatorFactory;
+use Slashplus\Identity\Validation\PassportValidation\Rules\BlackList;
+use Slashplus\Identity\Validation\PassportValidation\Rules\Checksum;
+use Slashplus\Identity\Validation\ValidatorFactory;
 
 /**
  * Class Validator
  *
- * @package Slashplus\IdentityGermany\Validation\PassportValidation
+ * @package Slashplus\Identity\Validation\PassportValidation
  */
 class Validator implements ValidatorContract
 {

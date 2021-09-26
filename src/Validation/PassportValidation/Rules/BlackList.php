@@ -1,9 +1,9 @@
 <?php
 
-namespace Slashplus\IdentityGermany\Validation\PassportValidation\Rules;
+namespace Slashplus\Identity\Validation\PassportValidation\Rules;
 
 use Illuminate\Contracts\Validation\Rule;
-use Slashplus\IdentityGermany\Validation\ValidatorFactory;
+use Slashplus\Identity\Validation\ValidatorFactory;
 
 class BlackList implements Rule
 {

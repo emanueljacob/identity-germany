@@ -1,9 +1,9 @@
 <?php
 
-namespace Slashplus\IdentityGermany;
+namespace Slashplus\Identity;
 
-use Slashplus\IdentityGermany\Contracts\Validation\Validator;
-use Slashplus\IdentityGermany\Exceptions\ClassNotFoundException;
+use Slashplus\Identity\Contracts\Validation\Validator;
+use Slashplus\Identity\Exceptions\ClassNotFoundException;
 
 class AgeVerification
 {

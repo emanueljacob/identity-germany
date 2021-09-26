@@ -1,6 +1,6 @@
 <?php
 
-namespace Slashplus\IdentityGermany\Exceptions;
+namespace Slashplus\Identity\Exceptions;
 
 class ClassNotFoundException extends \Exception
 {

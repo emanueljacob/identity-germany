@@ -1,9 +1,9 @@
 <?php
 
-namespace Slashplus\IdentityGermany\Validation\IdCardValidation\Rules;
+namespace Slashplus\Identity\Validation\IdCardValidation\Rules;
 
 use Illuminate\Contracts\Validation\Rule;
-use Slashplus\IdentityGermany\Validation\ValidatorFactory;
+use Slashplus\Identity\Validation\ValidatorFactory;
 
 class BlackList implements Rule
 {

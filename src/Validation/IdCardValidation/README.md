@@ -12,7 +12,7 @@ The complete calculation procedure of the id validation can be described like th
 
 The following structure explains the parts that the id card string will be divided into.
 
-- Serialnumber (based on authority code + consecutive number + checksum): 4 mixed characters + 4 mixed characters + 1 digit<br>
+- Serialnumber (based on authority code + consecutive number + checksum): 4 mixed characters + 5 mixed characters + 1 digit = 10<br>
   Example: `T220001293` with<br>
   - Authority code (Behördenkennzahl; BKZ) ID: 4 mixed characters (`[A-Z0-9]{4}`)<br>
     Example: `T220`

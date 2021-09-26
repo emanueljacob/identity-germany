@@ -1,6 +1,6 @@
 <?php
 
-namespace Slashplus\IdentityGermany\Contracts\Validation;
+namespace Slashplus\Identity\Contracts\Validation;
 
 interface Validator extends \Illuminate\Contracts\Validation\Validator
 {
