@@ -88,4 +88,10 @@ it('returns the correct birthdate', function($data, $expectation) {
     [['serial' => '3491039407', 'birth' => '9603080', 'expire' => '4707145', 'nationality' => 'D', 'checksum' => '8'], '1996-03-08'],
     [['serial' => '1087601249', 'birth' => '9604249', 'expire' => '4612241', 'nationality' => 'D', 'checksum' => '2'], '1996-04-24'],
     [['serial' => '9620118966', 'birth' => '9607170', 'expire' => '4701110', 'nationality' => 'D', 'checksum' => '6'], '1996-07-17'],
+    [['serial' => '1610772259', 'birth' => '3907100', 'expire' => '4712233', 'nationality' => 'D', 'checksum' => '6'], '1939-07-10'],
+    [['serial' => '3105880104', 'birth' => '6704148', 'expire' => '4706230', 'nationality' => 'D', 'checksum' => '4'], '1967-04-14'],
+    [['serial' => '3105880104', 'birth' => '2105312', 'expire' => '4706230', 'nationality' => 'D', 'checksum' => '2'], '2021-05-31'],
+    [['serial' => '3105880104', 'birth' => '2205315', 'expire' => '4706230', 'nationality' => 'D', 'checksum' => '2'], '2022-05-31'],
+    [['serial' => '3105880104', 'birth' => '0201221', 'expire' => '4706230', 'nationality' => 'D', 'checksum' => '8'], '2002-01-22'],
+    [['serial' => '3105880104', 'birth' => '1602294', 'expire' => '4706230', 'nationality' => 'D', 'checksum' => '6'], '2016-02-29'],
 ]);
