@@ -40,6 +40,7 @@
     },
     "prefer-stable": true,
     "require-dev": {
-        "pestphp/pest": "^1.18"
+        "pestphp/pest": "^1.18",
+        "spatie/ray": "^1.34"
     }
 }
