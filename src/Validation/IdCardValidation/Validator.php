@@ -15,6 +15,8 @@ use Slashplus\Identity\Validation\ValidatorFactory;
  */
 class Validator implements ValidatorContract
 {
+    use \Slashplus\Identity\Traits\HandlesDates;
+
     /**
      * @var \Illuminate\Validation\Validator
      */
@@ -249,7 +251,13 @@ class Validator implements ValidatorContract
      */
     public function validatedBirthDate(?string $timezone = 'GMT+2')
     {
-        return $this->validatedDate('birth', $timezone);
+        $date = $this->validatedDate('birth', $timezone);
+
+        if($date !== false) {
+            return $this->plausiblePastDateTime($date, $timezone);
+        }
+
+        return $date;
     }
 
     /**
@@ -297,8 +305,7 @@ class Validator implements ValidatorContract
             && count(array_intersect_key($valid[$type], array_flip(['year', 'month', 'day']))) === 3
         ) {
             $arr = $valid[$type];
-            $timezone = is_string($timezone) ? new \DateTimeZone($timezone) : null;
-            return \DateTime::createFromFormat('ymd H:i:s', "{$arr['year']}{$arr['month']}{$arr['day']} 00:00:00", $timezone);
+            return $this->createDateFromShortFormat($arr['year'], $arr['month'], $arr['day'], $timezone);
         }
 
         return false;
