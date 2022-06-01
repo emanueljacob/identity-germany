@@ -1,3 +1,6 @@
+### 1.1.1: 2022-06-01
+* Add illuminate package compatibility
+
 ### 1.1.0: 2022-05-31
 * Add dev package requirements
 * Add more test cases

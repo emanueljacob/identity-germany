@@ -1,7 +1,7 @@
 {
     "name": "slashplus/identity",
     "description": "Verify the age of a person using the german id card, german passport or german residence permission (eAT).",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -14,9 +14,9 @@
     "minimum-stability": "stable",
     "require": {
         "php": "~7.3|~8.0",
-        "illuminate/filesystem": "^6.0",
-        "illuminate/translation": "^6.0",
-        "illuminate/validation": "^6.0"
+        "illuminate/filesystem": "~6.0||~7.0||~8.0",
+        "illuminate/translation": "~6.0||~7.0||~8.0",
+        "illuminate/validation": "~6.0||~7.0||~8.0"
     },
     "keywords": [
         "age verification",
